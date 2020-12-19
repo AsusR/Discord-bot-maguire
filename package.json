@@ -11,5 +11,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AsusR/Discord-bot-maguire.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AsusR/Discord-bot-maguire/issues"
+  },
+  "homepage": "https://github.com/AsusR/Discord-bot-maguire#readme",
+  "devDependencies": {},
   "description": ""
 }
