@@ -7,7 +7,7 @@ const command = require('./command')
 client.on('ready', () => {
     console.log('The Client is ready');
     
-    command(client, 'ping', message => {
+    command(client, ['ping', 'test', 'hello'], message => {
         message.channel.send('Pong!');
     })
 });
