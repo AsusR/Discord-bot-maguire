@@ -74,7 +74,8 @@ client.on('ready', () => {
         command(client, 'git', (message) => {
             const embed = new Discord.MessageEmbed()
             .setTitle('Nuts Github')
-            .setURL('https://github.com/AsusR/Discord-bot-maguire');
+            .setURL('https://github.com/AsusR/Discord-bot-maguire')
+            .setAuthor(message.author.username)
             message.channel.send(embed);
             
         });
