@@ -4,6 +4,7 @@ const client = new Discord.Client();
 const config = require('./config.json');
 const command = require('./command');
 const firstMessage = require('./first-message');
+const privateMessage = require('./private-message');
 
 client.on('ready', () => {
     console.log('The Client is ready');
@@ -41,7 +42,11 @@ client.on('ready', () => {
                 }
             })
         });
+        // Sends a message on the channel if exist edits it else sends a new message
         firstMessage(client, '789889036562726922', 'hello world!!!', ['🔥', '🚒'])
+        
+        privateMessage(client, 'ping', 'Pong!');
     });
+
 
 client.login(config.token)
