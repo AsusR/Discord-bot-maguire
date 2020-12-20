@@ -71,7 +71,11 @@ client.on('ready', () => {
                     channel.setUserLimit(10);
                 } );
             });
-        
+        command(client, 'embed', (message) => {
+            const embed = new Discord.MessageEmbed()
+            .setTitle('Example text embed');
+            message.channel.send(embed);
+        });
     });
 
 
