@@ -65,7 +65,9 @@ client.on('ready', () => {
 
                 message.guild.channels.create(name, {
                     type: 'voice',
-                }).then((channel) => {} );
+                }).then((channel) => {
+                    console.log(channel);
+                } );
             });
         });
     });
