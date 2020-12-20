@@ -27,5 +27,20 @@ client.on('ready', () => {
              });
             };
         });
+
+        //Command 4
+        command(client, 'status', message => {
+            const content = message.content.replace('!status ', '');
+            // "!status something" if didnt replace status becomes "!status something" using replace it becomes "something"
+       
+            client.user.setPresence({
+                activity: {
+                    name: content,
+                    type: 0
+                }
+            })
+        });
+
     });
+
 client.login(config.token)
