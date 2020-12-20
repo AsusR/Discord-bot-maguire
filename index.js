@@ -73,8 +73,10 @@ client.on('ready', () => {
             });
         command(client, 'embed', (message) => {
             const embed = new Discord.MessageEmbed()
-            .setTitle('Example text embed');
+            .setTitle('Example text embed')
+            .setURL('https://github.com/AsusR/Discord-bot-maguire');
             message.channel.send(embed);
+            
         });
     });
 
