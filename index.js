@@ -22,7 +22,9 @@ client.on('ready', () => {
     //Command 3 
     command(client, ['cc', 'clearchannel'], message => {
         if (message.member.hasPermission('ADMINISTRATOR')) {
-            message.channel.messages.fetch().then(messages)
+            message.channel.messages.fetch().then(results => {
+                console.log(results);
+            })
         }
     });
 });
