@@ -45,9 +45,18 @@ client.on('ready', () => {
     //     // Sends a message on the channel if exist edits it else sends a new message
        // firstMessage(client, '789889036562726922', 'hello world!!!', ['🔥', '🚒'])
         
-        privateMessage(client, 'ping', 'Pong!');
-        client.users.fetch('352385166410514434').then(user => {
-            user.send('You have summoned me');
+        // privateMessage(client, 'ping', 'Pong!');
+        // client.users.fetch('352385166410514434').then(user => {
+        //     user.send('You have summoned me');
+        // })
+        command(client, 'createTextChannel', (message) => {
+            const name = message.content.replace('!createTextChannel', '');
+
+            message.guild.channel.create(name, {
+                type: 'text'
+            }).then(channel => {
+                console.log(channel);
+            });
         })
     });
 
