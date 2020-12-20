@@ -43,7 +43,7 @@ client.on('ready', () => {
             })
         });
         // Sends a message on the channel if exist edits it else sends a new message
-        firstMessage(client, '789889036562726922', 'hello world!!!', ['🔥', '🚒'])
+       // firstMessage(client, '789889036562726922', 'hello world!!!', ['🔥', '🚒'])
         
         privateMessage(client, 'ping', 'Pong!');
     });
