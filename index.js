@@ -22,12 +22,10 @@ client.on('ready', () => {
     //Command 3 
     command(client, ['cc', 'clearchannel'], message => {
         if (message.member.hasPermission('ADMINISTRATOR')) {
-            if(message.author.hasPermission('ADMINISTRATOR')){
             message.channel.messages.fetch().then(results => {
                 message.channel.bulkDelete(results)
              });
             };
-        }
         });
     });
 client.login(config.token)
