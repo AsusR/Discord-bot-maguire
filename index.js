@@ -71,9 +71,9 @@ client.on('ready', () => {
                     channel.setUserLimit(10);
                 } );
             });
-        command(client, 'embed', (message) => {
+        command(client, 'git', (message) => {
             const embed = new Discord.MessageEmbed()
-            .setTitle('Example text embed')
+            .setTitle('Nuts Github')
             .setURL('https://github.com/AsusR/Discord-bot-maguire');
             message.channel.send(embed);
             
