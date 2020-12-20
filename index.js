@@ -72,10 +72,13 @@ client.on('ready', () => {
                 } );
             });
         command(client, 'git', (message) => {
+            const imgEmb = 'https://previews.123rf.com/images/artshock/artshock1210/artshock121000046/15557821-imag-of-water-drops-on-window-and-blue-sky-background.jpg'
             const embed = new Discord.MessageEmbed()
             .setTitle('Nuts Github')
             .setURL('https://github.com/AsusR/Discord-bot-maguire')
             .setAuthor(message.author.username)
+            setImage(imgEmb)
+            .setThumbnail(imgEmb)
             message.channel.send(embed);
             
         });
