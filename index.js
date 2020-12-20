@@ -75,10 +75,10 @@ client.on('ready', () => {
             const imgEmb = 'https://avatars1.githubusercontent.com/u/72810501?s=400&v=4'
             const embed = new Discord.MessageEmbed()
             .setTitle('Nuts Github')
-            .setURL('https://github.com/AsusR/Discord-bot-maguire')
+            .setURL('https://github.com/AsusR')
             .setAuthor(message.author.username)
-            .setImage(imgEmb)
-            .setThumbnail(imgEmb)
+            .setFooter('Git Profile', imgEmb)
+            .setColor('f4f4f4')
             message.channel.send(embed);
             
         });
