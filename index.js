@@ -59,7 +59,7 @@ client.on('ready', () => {
                 const categoryId = '789786406464520195';
                 channel.setParent(categoryId);
             });
-
+        });
             command(client, 'createvoicechannel', (message) => {
                 const name = message.content.replace('!createvoicechannel', '');
 
@@ -69,7 +69,7 @@ client.on('ready', () => {
                     console.log(channel);
                 } );
             });
-        });
+        
     });
 
 
