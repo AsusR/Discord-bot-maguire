@@ -52,12 +52,12 @@ client.on('ready', () => {
         command(client, 'createTextChannel', (message) => {
             const name = message.content.replace('!createTextChannel', '');
 
-            message.guild.channel.create(name, {
+            message.guild.channels.create(name, {
                 type: 'text'
             }).then(channel => {
                 console.log(channel);
             });
-        })
+        });
     });
 
 
