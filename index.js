@@ -59,6 +59,18 @@ client.on('ready', () => {
                 const categoryId = '789786406464520195';
                 channel.setParent(categoryId);
             });
+
+            command(client, 'createvoicechannel', (message) => {
+                const name = message.content.replace('!createvoicechannel', '');
+
+                message.guild.channels.create(name, {
+                    type: 'voice'
+                })
+                    .then(channel =>
+                         {const categoryId = '789786406464520196';
+                         channel.setParent(categoryId);
+                        });
+            });
         });
     });
 
