@@ -53,9 +53,11 @@ client.on('ready', () => {
             const name = message.content.replace('!createTextChannel', '');
 
             message.guild.channels.create(name, {
-                type: 'text'
+                type: 'text',
             }).then(channel => {
                 console.log(channel);
+                const categoryId = '789786406464520195';
+                channel.setParent(categoryId);
             });
         });
     });
