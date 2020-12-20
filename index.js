@@ -41,7 +41,7 @@ client.on('ready', () => {
                 }
             })
         });
-        firstMessage(client, '789889036562726922', 'hello world', ['🔥'])
+        firstMessage(client, '789786406464520197', 'hello world', ['🔥'])
     });
 
 client.login(config.token)
