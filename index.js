@@ -64,7 +64,7 @@ client.on('ready', () => {
                 const name = message.content.replace('!createvoicechannel', '');
 
                 message.guild.channels.create(name, {
-                    type: 'voice'
+                    type: 'voice',
                 })
                     .then(channel =>
                          {const categoryId = '789786406464520196';
