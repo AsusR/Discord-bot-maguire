@@ -66,7 +66,9 @@ client.on('ready', () => {
                 message.guild.channels.create(name, {
                     type: 'voice',
                 }).then((channel) => {
-                    console.log(channel);
+                    const categoryId = '789786406464520196';
+                    channel.setParent(categoryId);
+                    channel.setUserLimit(10);
                 } );
             });
         
