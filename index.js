@@ -18,6 +18,13 @@ client.on('ready', () => {
             message.channel.send(`${guild.name} has total of ${guild.memberCount} members`)
         });
     });
+
+    //Command 3 
+    command(client, ['cc', 'clearchannel'], message => {
+        if (message.member.hasPermission('ADMINISTRATOR')) {
+            message.channel.messages.fetch().then(messages)
+        }
+    });
 });
 
 client.login(config.token);
