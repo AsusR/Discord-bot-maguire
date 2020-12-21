@@ -88,10 +88,22 @@ client.on('ready', () => {
             const icon = guild.iconURL();
            const embed = new Discord.MessageEmbed()
            .setTitle(`Server info for "${name}"`)
-           .setThumbnail(icon);
-           message.channel.send(embed);
+           .setThumbnail(icon)
+           .addFields({
+            name: 'Region',
+            value: region,
+       },{
+            name: 'Members',
+            value: memberCount,
+         },{
+            name: 'Our leader',
+            value: owner.user.tag,
+          },{
+            name: 'AFK Timeout',
+            value: afkTimeout / 60,
+           })   
+            });
         });
-    });
-
+   
 
 client.login(config.token)
