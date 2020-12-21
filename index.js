@@ -49,8 +49,8 @@ client.on('ready', () => {
         // client.users.fetch('352385166410514434').then(user => {
         //     user.send('You have summoned me');
         // })
-        command(client, 'createTextChannel', (message) => {
-            const name = message.content.replace('!createTextChannel', '');
+        command(client, 'createtextchannel', (message) => {
+            const name = message.content.replace('!createtextchannel', '');
 
             message.guild.channels.create(name, {
                 type: 'text',
@@ -106,9 +106,21 @@ client.on('ready', () => {
             });
 
             command(client, 'help', message => {
-                message.channel.send('help coming soon');
+                message.channel.send(`
+**!help** - Displays the help menu
+**!roll** - Rolls a random number between 1 and 100
+**!serverinfo** - displays the servers info
+**!git** - shows @nuts4008 github profile
+**!createtextchannel** - create Text channel 
+**!createvoicechannel** - create Voice channel
+                `);
             });
-
+            command(client, 'roll', message => {
+                const randomNumber = (min, max) => {
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
+                };
+                message.channel.send(`${message.author.toString()} Rolled ${randomNumber(1,100)}`);
+            })
             
         }); //  CLient on ready ENDS HERE
    
