@@ -106,14 +106,14 @@ client.on('ready', () => {
             });
 
             command(client, 'help', message => {
-                message.channel.send(`
+                message.channel.send(`\`
 **!help** - Displays the help menu
 **!roll** - Rolls a random number between 1 and 100
 **!serverinfo** - displays the servers info
 **!git** - shows @nuts4008 github profile
 **!createtextchannel** - create Text channel 
 **!createvoicechannel** - create Voice channel
-                `);
+                \``);
             });
             command(client, 'roll', message => {
                 const randomNumber = (min, max) => {
