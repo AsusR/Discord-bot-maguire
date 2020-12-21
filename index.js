@@ -123,7 +123,7 @@ client.on('ready', () => {
             const { prefix } = config;
             client.user.setPresence({
                 activity: {
-                    name: `Use ${prefix}help`,
+                    name: `Use "${prefix}help" for help`,
                 }
             });
         }); //  CLient on ready ENDS HERE
