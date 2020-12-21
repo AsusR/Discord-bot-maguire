@@ -102,6 +102,7 @@ client.on('ready', () => {
             name: 'AFK Timeout',
             value: afkTimeout / 60,
            })   
+           message.channel.send(embed);
             });
         });
    
