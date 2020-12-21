@@ -89,6 +89,7 @@ client.on('ready', () => {
            const embed = new Discord.MessageEmbed()
            .setTitle(`Server info for "${name}"`)
            .setThumbnail(icon);
+           message.channel.send(embed);
         });
     });
 
