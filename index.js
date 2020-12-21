@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 const config = require('./config.json');
 const command = require('./command');
-const firstMessage = require('./first-message');
+const roleClaim = require('./role-claim');
 const privateMessage = require('./private-message');
 
 client.on('ready', () => {
@@ -126,6 +126,8 @@ client.on('ready', () => {
                     name: `Use "${prefix}help" for help`,
                 }
             });
+
+            roleClaim(client)
         }); //  CLient on ready ENDS HERE
    
 
