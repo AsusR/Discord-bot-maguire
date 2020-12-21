@@ -8,8 +8,8 @@ module.exports = client => {
         })
     }
     const emojis = {
-        suprise : 'suprise',
-        sadge : 'sadge'
+        suprise : 'Roller',
+        sadge : 'Rolling',
     }
 
     const reactions = []
