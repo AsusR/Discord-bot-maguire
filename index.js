@@ -82,6 +82,9 @@ client.on('ready', () => {
             message.channel.send(embed);
             
         });
+        command(client, 'serverinfo', message => {
+            message.channel.send('Coming in soon like anytime now');
+        });
     });
 
 
