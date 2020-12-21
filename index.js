@@ -121,7 +121,11 @@ client.on('ready', () => {
                 message.channel.send(`${message.author.toString()} Rolled ${randomNumber(1,100)}`);
             });
             const { prefix } = config;
-            console.log('PREFIX :', prefix);
+            client.user.setPresence({
+                activity: {
+                    name: `Use ${prefix}help`,
+                }
+            });
         }); //  CLient on ready ENDS HERE
    
 
