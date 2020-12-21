@@ -25,3 +25,4 @@ module.exports = client => {
 
     firstMessage(client, channelId, emojiText, []);
 }
+//work
