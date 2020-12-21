@@ -83,7 +83,8 @@ client.on('ready', () => {
             
         });
         command(client, 'serverinfo', message => {
-            message.channel.send('Coming in soon like anytime now');
+            const { guild } = message;
+            console.log(guild);
         });
     });
 
