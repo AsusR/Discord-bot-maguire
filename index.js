@@ -99,12 +99,18 @@ client.on('ready', () => {
             name: 'Our leader',
             value: owner.user.tag,
           },{
-            name: 'AFK Timeout',
+            name: 'AFK Timeout in Minutes',
             value: afkTimeout / 60,
            })   
            message.channel.send(embed);
             });
-        });
+
+            command(client, 'help', message => {
+                message.channel.send('help coming soon');
+            });
+
+            
+        }); //  CLient on ready ENDS HERE
    
 
 client.login(config.token)
