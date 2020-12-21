@@ -84,9 +84,11 @@ client.on('ready', () => {
         });
         command(client, 'serverinfo', message => {
             const { guild } = message;
-            const { name, region, memberCount } = guild
+            const { name, region, memberCount, owner, afkTimeout } = guild
             const icon = guild.iconURL();
-            console.log(name, region, memberCount, icon);
+           const embed = new Discord.MessageEmbed()
+           .setTitle(`Server info for "${name}"`)
+           .setThumbnail(icon);
         });
     });
 
