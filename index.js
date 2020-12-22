@@ -131,6 +131,8 @@ client.on('ready', () => {
 
             command(client, 'ban', message =>  {
 
+                const { member, mentions } = message
+
                 if(member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBERS')){
                     console.log('Works')
                 } else {
