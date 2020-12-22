@@ -128,7 +128,8 @@ client.on('ready', () => {
             });
 
             roleClaim(client);
-
+            
+            // Ban anyone
             command(client, 'ban', message =>  {
 
                 const { member, mentions } = message
@@ -146,6 +147,26 @@ client.on('ready', () => {
                     message.channel.send(`${tag} Haha Loser`);
                 }
             });
+
+            // Kick anyone 
+            command(client, 'kick', message =>  {
+
+                const { member, mentions } = message
+                const tag = `<@${member.id}>`
+                if(member.hasPermission('ADMINISTRATOR') || member.hasPermission('KICK_MEMBERS')){
+                    const target = mentions.users.first();
+                    if (target) {
+                        const targetMember = message.guild.members.cache.get(target.id)
+                        targetMember.kick()
+                        message.channel.send(`${tag} That Guy cannot ascend He will return`);
+                    } else {
+                        message.channel.send(`${tag} Tag someone loser`)
+                    }
+                } else {
+                    message.channel.send(`${tag} Haha Loser`);
+                }
+            });
+
         }); //  CLient on ready ENDS HERE
         
 
