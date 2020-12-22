@@ -46,13 +46,14 @@ client.on('ready', () => {
 
             // Git command for User Nuts
         command(client, 'git', (message) => {
+            const color = 'f4f4f4'
             const imgEmb = 'https://avatars1.githubusercontent.com/u/72810501?s=400&v=4'
             const embed = new Discord.MessageEmbed()
             .setTitle('Nuts Github')
             .setURL('https://github.com/AsusR')
             .setAuthor(message.author.username)
             .setFooter('Git Profile', imgEmb)
-            .setColor('f4f4f4')
+            .setColor(color)
             message.channel.send(embed);
             
         });
