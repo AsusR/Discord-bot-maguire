@@ -28,8 +28,24 @@ module.exports = client => {
         if(user.id === '789858057567731722') {
             return
         }
-        console.log(reaction)
+    
         const emoji = reaction._emoji.name
+
+        const { guild } = reaction.message
+        
+        const roleName = emojis[emoji]
+        if(!roleName) {
+            return
+        }
+
+        const role = guild.roles.cache.find(role => role.name === roleName)
+        const member = guild.members.cache.find(member => member.id === user.id)
+
+        if(add) {
+            member.roles.add(role)
+        } else {
+            member.roles.remove(role)
+        }
     }
 
     client.on('messageReactionAdd', (reaction, user) => {
