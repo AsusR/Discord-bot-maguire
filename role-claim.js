@@ -22,5 +22,12 @@ module.exports = client => {
     }
 
     firstMessage(client, channelId, emojiText, reactions);
+
+    client.on('messageReactionAdd', (reaction, user) => {
+        console.log('add');
+    })
+    client.on('messageReactionRemove', (reaction, user) => {
+        console.log('remove');
+    })
 }
 //work pls s ad
