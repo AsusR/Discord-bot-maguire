@@ -2,19 +2,16 @@ const firstMessage = require('./first-message')
 module.exports = client => {
     const channelId = '790542617912803329';
 
-    const getEmoji = (emojiName) => {
-        client.emojis.cache.find((emoji) => {
-            emoji.name === emojiName
-        })
-    }
+ const getEmoji = emojiName => client.emojis.cache.find(emoji.name === emojiName);
+
     const emojis = {
-        suprise: 'Roller',
-        sadge: 'Rolling',
+        green: 'Green',
+        purple: 'Purple'
     }
 
     const reactions = []
 
-    let emojiText = 'Select Role by reacting to the emotes';
+    let emojiText = 'Select Role by reacting to the emotes\n\n';
     for (const key in emojis) {
         const emoji = getEmoji(key);
         reactions.push(emoji);
