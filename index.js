@@ -128,7 +128,16 @@ client.on('ready', () => {
             });
 
             roleClaim(client)
+
+            command(client, 'ban', message =>  {
+
+                if(member.hasPermission('ADMIN') || member.hasPermission('BAN_MEMBERS')){
+                    console.log('Works')
+                } else {
+                    message.channel.send(`<@${member.id}> Haha Loser`);
+                }
+            });
         }); //  CLient on ready ENDS HERE
-   
+        
 
 client.login(config.token)
