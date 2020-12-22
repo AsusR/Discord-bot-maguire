@@ -5,50 +5,21 @@ const config = require('./config.json');
 const command = require('./command');
 const roleClaim = require('./role-claim');
 const privateMessage = require('./private-message');
+const poll = require('./poll');
 
 client.on('ready', () => {
     console.log('The Client is ready');
 
-    //Command 1
-    // command(client, ['ping', 'test', 'hello'], message => {
-    //     message.channel.send('Pong!');
-    // });
+    //Command Clear chat
+    command(client, ['cc', 'clearchannel'], message => {
+        if (message.member.hasPermission('ADMINISTRATOR')) {
+            message.channel.messages.fetch().then(results => {
+                message.channel.bulkDelete(results)
+             });
+            };
+        });
 
-    // //Command 2
-    // command(client, 'servers', message => {
-    //     client.guilds.cache.forEach(guild => {
-    //         message.channel.send(`${guild.name} has total of ${guild.memberCount} members`)
-    //     });
-    // });
-
-    // //Command 3 
-    // command(client, ['cc', 'clearchannel'], message => {
-    //     if (message.member.hasPermission('ADMINISTRATOR')) {
-    //         message.channel.messages.fetch().then(results => {
-    //             message.channel.bulkDelete(results)
-    //          });
-    //         };
-    //     });
-
-    //     //Command 4
-    //     command(client, 'status', message => {
-    //         const content = message.content.replace('!status ', '');
-    //         // "!status something" if didnt replace status becomes "!status something" using replace it becomes "something"
-       
-    //         client.user.setPresence({
-    //             activity: {
-    //                 name: content,
-    //                 type: 0
-    //             }
-    //         })
-    //     });
-    //     // Sends a message on the channel if exist edits it else sends a new message
-       // firstMessage(client, '789889036562726922', 'hello world!!!', ['🔥', '🚒'])
-        
-        // privateMessage(client, 'ping', 'Pong!');
-        // client.users.fetch('352385166410514434').then(user => {
-        //     user.send('You have summoned me');
-        // })
+        // create text channel commands
         command(client, 'createtextchannel', (message) => {
             const name = message.content.replace('!createtextchannel', '');
 
@@ -60,6 +31,7 @@ client.on('ready', () => {
                 channel.setParent(categoryId);
             });
         });
+        // Create Voice Channel command
             command(client, 'createvoicechannel', (message) => {
                 const name = message.content.replace('!createvoicechannel', '');
 
@@ -71,6 +43,8 @@ client.on('ready', () => {
                     channel.setUserLimit(10);
                 } );
             });
+
+            // Git command for User Nuts
         command(client, 'git', (message) => {
             const imgEmb = 'https://avatars1.githubusercontent.com/u/72810501?s=400&v=4'
             const embed = new Discord.MessageEmbed()
@@ -82,6 +56,8 @@ client.on('ready', () => {
             message.channel.send(embed);
             
         });
+
+        // Server info command        
         command(client, 'serverinfo', message => {
             const { guild } = message;
             const { name, region, memberCount, owner, afkTimeout } = guild
@@ -105,6 +81,8 @@ client.on('ready', () => {
            message.channel.send(embed);
             });
 
+            // Help command
+
             command(client, 'help', message => {
                 message.channel.send(
 `**!help** - Displays the help menu
@@ -114,12 +92,17 @@ client.on('ready', () => {
 **!createtextchannel** - create Text channel 
 **!createvoicechannel** - create Voice channel`);
             });
+
+            // Roll command
+
             command(client, 'roll', message => {
                 const randomNumber = (min, max) => {
                     return Math.floor(Math.random() * (max - min + 1)) + min;
                 };
                 message.channel.send(`${message.author.toString()} Rolled ${randomNumber(1,100)}`);
             });
+
+            // Set presence 
             const { prefix } = config;
             client.user.setPresence({
                 activity: {
@@ -127,6 +110,7 @@ client.on('ready', () => {
                 }
             });
 
+            // Roll claims
             roleClaim(client);
             
             // Ban anyone
@@ -166,7 +150,9 @@ client.on('ready', () => {
                     message.channel.send(`${tag} Haha Loser`);
                 }
             });
-
+            // Poll
+            poll(client);
+            
         }); //  CLient on ready ENDS HERE
         
 
