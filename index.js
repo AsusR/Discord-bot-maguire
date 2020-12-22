@@ -132,12 +132,18 @@ client.on('ready', () => {
             command(client, 'ban', message =>  {
 
                 const { member, mentions } = message
-
+                const tag = `<@${member.id}>`
                 if(member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBERS')){
                     const target = mentions.users.first();
-                    console.log(target);
+                    if (target) {
+                        const targetMember = message.guild.members.cache.get(target.id)
+                        targetMember.ban()
+                        message.channel.send(`${tag} That Guy has been ascended`);
+                    } else {
+                        message.channel.send(`${tag} Tag someone loser`)
+                    }
                 } else {
-                    message.channel.send(`<@${member.id}> Haha Loser`);
+                    message.channel.send(`${tag} Haha Loser`);
                 }
             });
         }); //  CLient on ready ENDS HERE
