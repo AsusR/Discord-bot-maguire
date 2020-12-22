@@ -23,14 +23,23 @@ module.exports = client => {
 
     firstMessage(client, channelId, emojiText, reactions);
 
+    // Handle reactions 
+    const handleReaction = (reaction, user, add) => {
+        if(user.id === '789858057567731722') {
+            return
+        }
+        console.log(reaction)
+        const emoji = reaction._emoji.name
+    }
+
     client.on('messageReactionAdd', (reaction, user) => {
         if(reaction.message.channel.id === channelId) {
-            console.log('Someting');
+            handleReaction(reaction, user, true)
         }
     })
     client.on('messageReactionRemove', (reaction, user) => {
         if(reaction.message.channel.id === channelId) {
-            console.log('remove');
+            handleReaction(reaction, user, false)
         }
     })
 }
