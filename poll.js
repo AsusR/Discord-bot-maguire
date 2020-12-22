@@ -4,10 +4,10 @@ module.exports = client => {
     ]
 
     const addReactions = message => {
-        message.react('upvote')
+        message.react('⏫')
 
         setTimeout(() => {
-            message.react('downvote')
+            message.react('⏬')
         }, 750)
     }
 
