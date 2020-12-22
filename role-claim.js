@@ -21,6 +21,6 @@ module.exports = client => {
         emojiText += `${emoji} = ${role}\n`
     }
 
-    firstMessage(client, channelId, emojiText, []);
+    firstMessage(client, channelId, emojiText, reactions);
 }
 //work pls s ad
