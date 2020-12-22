@@ -127,11 +127,11 @@ client.on('ready', () => {
                 }
             });
 
-            roleClaim(client)
+            roleClaim(client);
 
             command(client, 'ban', message =>  {
 
-                if(member.hasPermission('ADMIN') || member.hasPermission('BAN_MEMBERS')){
+                if(member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBERS')){
                     console.log('Works')
                 } else {
                     message.channel.send(`<@${member.id}> Haha Loser`);
