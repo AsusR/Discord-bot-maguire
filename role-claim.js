@@ -24,10 +24,14 @@ module.exports = client => {
     firstMessage(client, channelId, emojiText, reactions);
 
     client.on('messageReactionAdd', (reaction, user) => {
-        console.log('add');
+        if(reaction.message.channel.id === channelId) {
+            console.log('Someting');
+        }
     })
     client.on('messageReactionRemove', (reaction, user) => {
-        console.log('remove');
+        if(reaction.message.channel.id === channelId) {
+            console.log('remove');
+        }
     })
 }
 //work pls s ad
